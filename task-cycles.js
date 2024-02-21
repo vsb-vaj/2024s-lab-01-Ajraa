@@ -5,9 +5,16 @@
 // arrayOfMultiples(12, 10) ➞ [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
 // arrayOfMultiples(17, 6) ➞ [17, 34, 51, 68, 85, 102]
 
+//import { numbers } from "./task-array";
+
 // Your code:
-const arrayOfMultiples = (num, length) => {
+export const arrayOfMultiples = (num, length) => {
     // ... write code ...
+    let arr = [];
+    for (let i = 1; i <= length; i++) {
+        arr.push(num*i);
+    }
+    return arr;
 };
 
 // 2 =================================
@@ -19,8 +26,22 @@ const arrayOfMultiples = (num, length) => {
 // changeDirection([1, 2]) ➞ [2, 1]
 
 // Your code:
-const changeDirection = (array) => {
+export const changeDirection = (array) => {
 // ... write code ...
+    let arr = [];
+    for (let i = array.length-1; 0 <= i; i--) {
+        arr.push(array[i]);
+    }
+    return arr;
+};
+
+export const sum = (numbers) => {
+    const initialValue = 0;
+    const value = numbers.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      initialValue
+    );
+    return value;  
 };
 
 // 3 =================================
@@ -30,6 +51,19 @@ const changeDirection = (array) => {
 // biggerArray([1,2,3], [2,3,4]) ➞ { array: [2,3,4], sum: 9 }
 
 // Your code:
-const biggerArray = (array1, array2) => {
+export const biggerArray = (array1, array2) => {
 // ... write code ...
+    const sum1 = sum(array1);
+    const sum2 = sum(array2);
+    if (sum1 > sum2) {
+        return {
+            array: array1,
+            sum: sum1,
+        };
+    } else {
+        return {
+            array: array2,
+            sum: sum2,
+        }
+    }
 };

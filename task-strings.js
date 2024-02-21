@@ -7,8 +7,9 @@
 // "javascript-is-the-best"
 
 // Your code:
-const parametrize = (input) => {
-
+export const parametrize = (input) => {
+    let arr = input.split(' ');
+    return arr.join('-');
 };
 
 // 2 =================================
@@ -18,8 +19,8 @@ const parametrize = (input) => {
 // ➞ Hello Obi-wan from Starwars universe! It is nice to meet you! You look awesome for your 40, young Jedi!
 
 // Your code:
-const giveSentenceForPerson = (obj) => {
-
+export const giveSentenceForPerson = (obj) => {
+    return `Hello ${obj.name} from ${obj.location}! It is nice to meet you! You look awesome for your ${obj.age}, your ${obj.position}`;
 };
 
 // 3 =================================
@@ -28,6 +29,6 @@ const giveSentenceForPerson = (obj) => {
 // replace("Hello Javascript") ➞ "H*ll* J*v*scr*pt"
 
 // Your code:
-const replace = (input) => {
-
+export const replace = (input) => {
+    console.log(input.replace(/a|e|i|o/g, '*'));
 };

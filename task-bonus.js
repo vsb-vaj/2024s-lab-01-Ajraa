@@ -7,9 +7,17 @@
 // * * * * *
 
 // Your code:
-const drawTriangle = (length = 5) => {
+export const drawTriangle = (length = 5) => {
   
     // ... write code ...
+    for (let i = 0; i < length; i++) {
+      for (let j = 0; j <= i; j++) {
+        process.stdout.write('*');
+        if ( j !== (i+1))
+        process.stdout.write(' ');
+      }
+      process.stdout.write('\n');
+    }
 };
 
 // 2#  ========== BONUS =======================
@@ -27,8 +35,25 @@ const drawTriangle = (length = 5) => {
 // J A V A S C R I P T
 
 // Your code:
-const drawJavascriptWord = (word = "javascript") => {
+export const drawJavascriptWord = (word = "javascript") => {
   // ... write code ...
+  for (let i = 0; i <=   word.length; i++) {
+    let stars = word.length - i;
+    let letters = word.length - stars;
+   
+    for (let j = 0; j < stars; j++) {
+       process.stdout.write('*');
+      if(j !== (stars-1) || letters !== 0)
+         process.stdout.write(' ');
+    }
+
+    for (let j = word.length - letters; j < word.length; j++) {
+      process.stdout.write(word[j].toUpperCase());
+      if(j !== (word.length-1))
+         process.stdout.write(' ');
+    }
+    process.stdout.write('\n');
+  }
 };
 
 
@@ -47,6 +72,13 @@ const drawJavascriptWord = (word = "javascript") => {
 //   ];
 
 // Your code:
-const getVehiclesAndTopSpeed = (vehicles) => {
-  
+export const getVehiclesAndTopSpeed = (vehicles) => {
+  let arr = [];
+  vehicles.forEach((x) => {
+    arr.push({
+      name: x.name,
+      topSpeed: Math.max(...x.measuredSpeeds),
+    });
+  });
+  return arr;
 };
